@@ -9,5 +9,5 @@ RUN yum install -y epel-release && \
     yum install -y createrepo expect glibc-static s3cmd wget && \
     yum clean all
 
-ADD install-go.sh /tmp/install-go.sh
+ADD ../install-go.sh /tmp/install-go.sh
 RUN bash /tmp/install-go.sh
