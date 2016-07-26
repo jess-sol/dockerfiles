@@ -4,7 +4,7 @@ MAINTAINER Ben "ben@ros.io"
 ENV USER root
 ENV GOVERSION 1.6.2
 
-ADD setup-env.sh /tmp/setup-env.sh
-RUN bash /tmp/setup-env.sh && rm /tmp/setup-env.sh
-ADD install-go.sh /tmp/install-go.sh
-RUN bash /tmp/install-go.sh && rm /tmp/install-go.sh
+ADD build /tmp/
+RUN bash /tmp/build/setup-env.sh && \
+    bash /tmp/build/install-go.sh && \
+    rm -rf /tmp/build
