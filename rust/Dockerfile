@@ -3,7 +3,7 @@ MAINTAINER Ben "ben@ros.io"
 
 ENV USER root
 
-RUN yum install -y file && yum clean all
+RUN yum install -y gcc file && yum clean all
 RUN echo '#!/bin/bash' > /usr/bin/sudo && \
     echo 'exec $@' >> /usr/bin/sudo && \
     chmod +x /usr/bin/sudo; \
