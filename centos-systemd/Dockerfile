@@ -16,8 +16,12 @@ rm -f /lib/systemd/system/basic.target.wants/*; \
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 RUN yum install -y initscripts && \
+yum clean all && \
 chkconfig network off && \
 chkconfig netconsole off
+
+RUN yum install -y cronie && \
+yum clean all
 
 VOLUME ["/sys/fs/cgroup"]
 
