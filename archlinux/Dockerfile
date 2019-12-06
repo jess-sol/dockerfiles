@@ -19,3 +19,7 @@ RUN pacman --noconfirm -Syu && \
     pacman --noconfirm -S git bubblewrap && \
     pacman --noconfirm -U /tmp/rua*.pkg.tar.xz && \
     rm /tmp/*.pkg.tar.xz
+
+RUN pacman --noconfirm -S bash_completion neovim pkgfile bind-tools gnu-netcat
+
+ENV EDITOR=nvim
