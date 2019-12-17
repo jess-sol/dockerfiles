@@ -20,6 +20,8 @@ RUN pacman --noconfirm -Syu && \
     pacman --noconfirm -U /tmp/rua*.pkg.tar.xz && \
     rm /tmp/*.pkg.tar.xz
 
-RUN pacman --noconfirm -S bash-completion neovim pkgfile bind-tools gnu-netcat
+RUN pacman --noconfirm -S bash-completion neovim pkgfile bind-tools gnu-netcat iputils
 
 ENV EDITOR=nvim
+RUN echo "alias vim=nvim" >> ~/.bashrc &&
+    echo "alias vi=nvim" >> ~/.bashrc
