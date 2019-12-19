@@ -20,7 +20,7 @@ RUN pacman --noconfirm -Syu && \
     pacman --noconfirm -U /tmp/rua*.pkg.tar.xz && \
     rm /tmp/*.pkg.tar.xz
 
-RUN pacman --noconfirm -S bash-completion neovim pkgfile bind-tools gnu-netcat iputils iproute2 postgresql-libs
+RUN pacman --noconfirm -Sy bash-completion neovim pkgfile bind-tools gnu-netcat iputils iproute2 postgresql-libs
 
 ENV EDITOR=nvim
 RUN echo "alias vim=nvim" >> ~/.bashrc && \
