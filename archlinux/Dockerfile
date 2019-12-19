@@ -23,5 +23,5 @@ RUN pacman --noconfirm -Syu && \
 RUN pacman --noconfirm -S bash-completion neovim pkgfile bind-tools gnu-netcat iputils iproute2 postgresql-libs
 
 ENV EDITOR=nvim
-RUN echo "alias vim=nvim" >> ~/.bashrc &&
+RUN echo "alias vim=nvim" >> ~/.bashrc && \
     echo "alias vi=nvim" >> ~/.bashrc
